@@ -10,7 +10,7 @@
             <a href="https://ministerionovaalianca.vercel.app/" target="_blank" class="text-[#39393A] hover:text-indigo-400">
                 <i class="fa-solid fa-cross"></i>
             </a>
-            <a href="https://instagram.com" target="_blank" class="text-[#39393A] hover:text-indigo-400">
+            <a href="about:https://www.instagram.com/ministerionova.alianca/?igsh=aTN4YjMza3dyNWJv" target="_blank" class="text-[#39393A] hover:text-indigo-400">
                 <i class="fa-brands fa-instagram"></i>
             </a>
         </div>
