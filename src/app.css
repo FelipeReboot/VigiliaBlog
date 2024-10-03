@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+    Cores:
+    Background: #E8ECE4 (cinza claro fundo verde)
+    Cor das fontes: #39393A (cinza quase preto)
+    Animações de cor: #1C7C54 (verde)
+    Azul destaques: #788AA3
+    Terracota claro destaques: #DE9151
+
+    modelo de post:
+    <script>
+    import Artigo from "./artigo.svelte";
+    </script>
+    
+    <Artigo id="nome do post">
+    <h2>
+    Titulo
+    </h2>
+    <h3>Data e local</h3>
+    <h3>Autor </h3> 
+    <p>
+    Seu texto
+    </p>
+
+</Artigo>
+*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    @apply font-poppins text-[#39393A];
+}
+
+h1 {
+    @apply font-cormorant text-4xl;
+}
+
+h2 {
+    @apply font-cormorant text-4xl md:text-5xl lg:text-6xl text-center;
+    /* Centralizado e responsivo */
+}
+
+h3,
+h4 {
+    @apply font-baskerville text-lg md:text-xl text-center;
+    /* Responsivo, ajustando tamanho de acordo com as telas */
+}
+
+p {
+    @apply font-poppins text-base leading-relaxed max-w-full sm:max-w-full md:max-w-screen-md mx-auto my-4;
+    line-height: 1.75;
+    /* Aumenta o espaçamento entre linhas para uma leitura mais fluida */
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/*Separador de conteudos*/
+
+.separator {
+    @apply relative flex items-center justify-center my-8;
+    /* Centraliza a linha e os diamantes */
+}
+
+.separator::before,
+.separator::after {
+    content: '';
+    width: 10px;
+    /* Diamantes menores */
+    height: 10px;
+    background-color: #39393A;
+    /* Cor dos diamantes */
+    transform: rotate(45deg);
+    /* Mantém o formato de diamante */
+}
+
+.separator::before {
+    @apply absolute left-0;
+    /* Posiciona o diamante à esquerda */
+    transform: rotate(45deg) translateX(-5px);
+    /* Junta o diamante à linha */
+}
+
+.separator::after {
+    @apply absolute right-0;
+    /* Posiciona o diamante à direita */
+    transform: rotate(45deg) translateX(5px);
+    /* Junta o diamante à linha */
+}
+
+.separator-line {
+    @apply w-full h-px bg-[#39393A];
+    /* Linha de separação */
+    max-width: 600px;
+    /* Limita a largura da linha */
+}
+
+
+/*Para adição de imagens utilizar essa classe
+
+ex:
+
+<div class="image-container">
+    <img src="sua-imagem.jpg" alt="Descrição da imagem" class="responsive-image">
+</div>
+
+*/
+
+.image-container {
+    @apply border border-black rounded-lg overflow-hidden;
+    /* Borda preta, bordas arredondadas e ocultar overflow */
+    max-width: 100%;
+    /* Garante que o contêiner não ultrapasse a tela */
+    display: flex;
+    /* Usado para alinhar a imagem à direita */
+    justify-content: flex-end;
+    /* Justifica a imagem à direita */
+    margin: 1rem 0;
+    /* Margem vertical para espaçamento */
+}
+
+.responsive-image {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/*Para a adição de videos utilizar essa classe em uma div
+
+ex: 
+<div class="video-container mx-auto">
+    <iframe 
+        src=" " 
+        title="Descrição do vídeo" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+    </iframe>
+</div>
+*/
+
+.video-container {
+    @apply relative w-full h-0 overflow-hidden mx-auto;
+    /* Define a largura como 100% e altura como 0 */
+    padding-bottom: 56.25%;
+    /* Proporção 16:9 (altura / largura = 9 / 16 * 100) */
+    max-width: 800px;
+    /* Limita a largura máxima do contêiner */
+}
+
+.video-container iframe {
+    @apply absolute top-0 left-0 w-full h-full;
+    /* Faz o iframe ocupar todo o contêiner */
+}
